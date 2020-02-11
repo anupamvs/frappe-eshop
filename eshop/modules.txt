@@ -1,1 +1,5 @@
 E-shop
+Product
+Inventory
+Customer
+Company

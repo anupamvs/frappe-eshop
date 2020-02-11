@@ -20,47 +20,77 @@ def get_data():
 			]
 		},
 		{
-			"label": _("Accounts"),
+			"label": _("Customer"),
 			"items": [
 				{
 					"type": "doctype",
-					"name": "Social Login Key",
+					"name": "Customer",
 					"description": _("Enter keys to enable login via Facebook, Google, GitHub."),
 				},
 				{
 					"type": "doctype",
-					"name": "LDAP Settings",
+					"name": "Customer Type",
 					"description": _("Ldap settings"),
 				},
 				{
 					"type": "doctype",
-					"name": "OAuth Client",
+					"name": "Sales Invoice",
 					"description": _("Register OAuth Client App"),
 				},
 				{
 					"type": "doctype",
-					"name": "OAuth Provider Settings",
+					"name": "Purchase Invoice",
 					"description": _("Settings for OAuth Provider"),
 				},
 			]
 		},
 		{
-			"label": _("Stock"),
+			"label": _("Inventory"),
 			"items": [
 				{
 					"type": "doctype",
-					"name": "Webhook",
+					"name": "Add Product",
 					"description": _("Webhooks calling API requests into web apps"),
 				},
 				{
 					"type": "doctype",
-					"name": "Slack Webhook URL",
+					"name": "Location",
 					"description": _("Slack Webhooks for internal integration"),
 				},
+				{
+					"type": "report",
+					"name": "Product Balance",
+					"description": _("Slack Webhooks for internal integration"),
+				}
 			]
 		},
 		{
-			"label": _("Customer"),
+			"label": _("Accounts"),
+			"items": [
+				{
+					"type": "doctype",
+					"name": "Google Settings",
+					"description": _("Google API Settings."),
+				},
+				{
+					"type": "doctype",
+					"name": "Google Contacts",
+					"description": _("Google Contacts Integration."),
+				},
+				{
+					"type": "doctype",
+					"name": "Google Calendar",
+					"description": _("Google Calendar Integration."),
+				},
+				{
+					"type": "doctype",
+					"name": "Google Drive",
+					"description": _("Google Drive Integration."),
+				}
+			]
+		},
+		{
+			"label": _("Company"),
 			"items": [
 				{
 					"type": "doctype",
