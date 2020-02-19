@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "autoname": "field:title",
  "creation": "2020-02-11 16:09:38.734402",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -11,11 +12,12 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Title"
+   "label": "Title",
+   "unique": 1
   }
  ],
  "links": [],
- "modified": "2020-02-11 16:09:38.734402",
+ "modified": "2020-02-18 09:51:19.442499",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Location",

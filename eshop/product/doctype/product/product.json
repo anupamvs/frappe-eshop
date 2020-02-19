@@ -6,6 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "basic_information_section",
   "product_name",
   "category",
   "image",
@@ -46,11 +47,13 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "cost_price",
    "fieldtype": "Currency",
    "label": "Cost Price"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "selling_price",
    "fieldtype": "Currency",
    "label": "Selling Price"
@@ -62,6 +65,7 @@
    "label": "Tax Details"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "tax",
    "fieldtype": "Data",
    "label": "Tax"
@@ -85,10 +89,15 @@
   {
    "fieldname": "text_editor_12",
    "fieldtype": "Text Editor"
+  },
+  {
+   "fieldname": "basic_information_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
   }
  ],
  "links": [],
- "modified": "2020-02-11 15:40:53.214996",
+ "modified": "2020-02-17 18:24:06.888033",
  "modified_by": "Administrator",
  "module": "Product",
  "name": "Product",

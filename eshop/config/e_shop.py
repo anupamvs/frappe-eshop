@@ -49,7 +49,7 @@ def get_data():
 			"items": [
 				{
 					"type": "doctype",
-					"name": "Add Product",
+					"name": "Product Movement",
 					"description": _("Webhooks calling API requests into web apps"),
 				},
 				{
@@ -59,6 +59,9 @@ def get_data():
 				},
 				{
 					"type": "report",
+					"is_query_report": True,
+					"doctype":"Basket",
+					"onboard": 1,
 					"name": "Product Balance",
 					"description": _("Slack Webhooks for internal integration"),
 				}
@@ -67,51 +70,13 @@ def get_data():
 		{
 			"label": _("Accounts"),
 			"items": [
-				{
-					"type": "doctype",
-					"name": "Google Settings",
-					"description": _("Google API Settings."),
-				},
-				{
-					"type": "doctype",
-					"name": "Google Contacts",
-					"description": _("Google Contacts Integration."),
-				},
-				{
-					"type": "doctype",
-					"name": "Google Calendar",
-					"description": _("Google Calendar Integration."),
-				},
-				{
-					"type": "doctype",
-					"name": "Google Drive",
-					"description": _("Google Drive Integration."),
-				}
+				
 			]
 		},
 		{
 			"label": _("Company"),
 			"items": [
-				{
-					"type": "doctype",
-					"name": "Google Settings",
-					"description": _("Google API Settings."),
-				},
-				{
-					"type": "doctype",
-					"name": "Google Contacts",
-					"description": _("Google Contacts Integration."),
-				},
-				{
-					"type": "doctype",
-					"name": "Google Calendar",
-					"description": _("Google Calendar Integration."),
-				},
-				{
-					"type": "doctype",
-					"name": "Google Drive",
-					"description": _("Google Drive Integration."),
-				}
+				
 			]
 		}
 	]
