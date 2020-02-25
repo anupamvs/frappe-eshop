@@ -19,37 +19,6 @@ class ProductMovement(Document):
 			self.remove_product_from_location()
 		elif self.to_location:
 			self.add_product_to_location()
-		else:
-			frappe.throw("Empty")
-		
-		# for item in self.items:
-		# 	basket_doc = get_basket(item.product, self.to_location)
-		# 	basket_doc.quantity = item.quantity
-		# 	basket_doc.save(ignore_permissions=True)
-
-
-		# basket = frappe.db.get_value("Basket", {
-		# 	"product": self.product,
-		# 	"location": self.location
-		# })
-
-		# if not basket:
-		# 	basket_doc = frappe.get_doc({
-		# 		"doctype": "Basket",
-		# 		"product": self.product,
-		# 		"location": self.location
-		# 	})
-		# 	basket_doc.insert(ignore_permissions=True)
-		# else:
-		# 	basket_doc = frappe.get_doc("Basket", basket)
-
-		# bin_doc.update({
-		# 	"product": self.product,
-		# 	"location": self.location,
-		# 	"quantity": self.quantity
-		# })
-
-		# basket_doc.save(ignore_permissions=True)
 	
 	def add_product_to_location(self):
 		for item in self.items:

@@ -1,38 +1,26 @@
 {
  "actions": [],
- "autoname": "field:product_category_name",
- "creation": "2020-02-11 15:30:09.882330",
+ "autoname": "field:account_name",
+ "creation": "2020-02-20 10:51:02.882966",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "product_category_name",
+  "account_name",
   "lft",
   "rgt",
   "is_group",
   "old_parent",
-  "parent_product_category"
+  "parent_account"
  ],
  "fields": [
   {
-   "fieldname": "product_category_name",
+   "fieldname": "account_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Name",
+   "label": "Account Name",
    "reqd": 1,
    "unique": 1
-  },
-  {
-   "fieldname": "parent_product_category",
-   "fieldtype": "Link",
-   "label": "Parent Product Category",
-   "options": "Product Category"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_group",
-   "fieldtype": "Check",
-   "label": "Is Group"
   },
   {
    "fieldname": "lft",
@@ -51,19 +39,31 @@
    "read_only": 1
   },
   {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
    "fieldname": "old_parent",
    "fieldtype": "Link",
    "label": "Old Parent",
-   "options": "Product Category"
+   "options": "Account"
+  },
+  {
+   "fieldname": "parent_account",
+   "fieldtype": "Link",
+   "label": "Parent Account",
+   "options": "Account"
   }
  ],
  "is_tree": 1,
  "links": [],
- "modified": "2020-02-19 14:45:23.607409",
+ "modified": "2020-02-24 14:58:07.224308",
  "modified_by": "Administrator",
- "module": "Product",
- "name": "Product Category",
- "nsm_parent_field": "parent_product_category",
+ "module": "Eshop Accounts",
+ "name": "Account",
+ "nsm_parent_field": "parent_account",
  "owner": "Administrator",
  "permissions": [
   {
@@ -79,6 +79,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "track_changes": 1

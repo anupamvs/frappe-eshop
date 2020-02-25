@@ -4,7 +4,12 @@
 
 from __future__ import unicode_literals
 # import frappe
-from frappe.utils.nestedset import NestedSet
+from frappe.model.document import Document
 
-class ProductCategory(NestedSet):
-	nsm_parent_field = "parent_product_category"
+class SalesInvoice(Document):
+	
+	def on_submit(self):
+		pass
+
+	def make_gl_entries():
+		pass

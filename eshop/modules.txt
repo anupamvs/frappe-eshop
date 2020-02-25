@@ -3,3 +3,4 @@ Product
 Inventory
 Customer
 Company
+Eshop Accounts

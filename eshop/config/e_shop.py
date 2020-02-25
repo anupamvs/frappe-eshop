@@ -10,13 +10,19 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Product",
-					"description": _("Braintree"),
+					"onboard": 1,
 				},
 				{
 					"type": "doctype",
 					"name": "Product Category",
-					"description": _("PayPal payment gateway settings"),
-				}
+					"label": "Product Category",
+					"link": "Tree/Product Category",
+					"onboard": 1,
+				},
+				{
+					"type": "doctype",
+					"name": "Purchase Invoice"
+				},
 			]
 		},
 		{
@@ -25,22 +31,15 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Customer",
-					"description": _("Enter keys to enable login via Facebook, Google, GitHub."),
+					"onboard": 1,
 				},
 				{
 					"type": "doctype",
 					"name": "Customer Type",
-					"description": _("Ldap settings"),
 				},
 				{
 					"type": "doctype",
 					"name": "Sales Invoice",
-					"description": _("Register OAuth Client App"),
-				},
-				{
-					"type": "doctype",
-					"name": "Purchase Invoice",
-					"description": _("Settings for OAuth Provider"),
 				},
 			]
 		},
@@ -50,12 +49,11 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Product Movement",
-					"description": _("Webhooks calling API requests into web apps"),
 				},
 				{
 					"type": "doctype",
 					"name": "Location",
-					"description": _("Slack Webhooks for internal integration"),
+					"onboard": 1,
 				},
 				{
 					"type": "report",
@@ -63,14 +61,16 @@ def get_data():
 					"doctype":"Basket",
 					"onboard": 1,
 					"name": "Product Balance",
-					"description": _("Slack Webhooks for internal integration"),
 				}
 			]
 		},
 		{
 			"label": _("Accounts"),
 			"items": [
-				
+				{
+					"type": "doctype",
+					"name": "Account"
+				}
 			]
 		},
 		{

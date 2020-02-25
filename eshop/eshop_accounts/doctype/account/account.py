@@ -4,7 +4,9 @@
 
 from __future__ import unicode_literals
 # import frappe
+from frappe.model.document import Document
 from frappe.utils.nestedset import NestedSet
 
-class ProductCategory(NestedSet):
-	nsm_parent_field = "parent_product_category"
+class Account(NestedSet):
+	nsm_parent_field = "parent_account"
+

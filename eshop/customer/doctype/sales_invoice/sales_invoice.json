@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "autoname": "SALE.######",
+ "creation": "2020-02-20 15:09:29.719700",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "currency",
+  "amended_from",
+  "column_break_3",
+  "date",
+  "time",
+  "edit_date_time",
+  "products_section",
+  "product_list",
+  "section_break_10",
+  "net_quantity",
+  "column_break_11",
+  "net_total",
+  "billing_information_section",
+  "name1",
+  "mobile",
+  "column_break_9",
+  "email",
+  "address",
+  "field"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sales Invoice",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "default": "Now",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "billing_information_section",
+   "fieldtype": "Section Break",
+   "label": "Billing Information"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "products_section",
+   "fieldtype": "Section Break",
+   "label": "Products"
+  },
+  {
+   "fieldname": "product_list",
+   "fieldtype": "Table",
+   "label": "Product List",
+   "options": "Sales Invoice Items"
+  },
+  {
+   "default": "0",
+   "fieldname": "edit_date_time",
+   "fieldtype": "Check",
+   "label": "Edit Date Time"
+  },
+  {
+   "default": "0.0000",
+   "fieldname": "net_quantity",
+   "fieldtype": "Float",
+   "label": "Net Quantity",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "field",
+   "fieldtype": "Data",
+   "label": "Test"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  }
+ ],
+ "links": [],
+ "modified": "2020-02-25 13:49:05.664884",
+ "modified_by": "Administrator",
+ "module": "Customer",
+ "name": "Sales Invoice",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
