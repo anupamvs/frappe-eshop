@@ -70,6 +70,14 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Account"
+				},
+				{
+					"type": "doctype",
+					"name": "Account",
+					"icon": "fa fa-sitemap",
+					"label": _("Account Tree"),
+					"link": "Tree/Account",
+					"onboard": 1,
 				}
 			]
 		},

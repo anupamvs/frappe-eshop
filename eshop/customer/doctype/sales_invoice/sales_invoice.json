@@ -6,6 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "company",
   "customer",
   "currency",
   "amended_from",
@@ -13,9 +14,12 @@
   "date",
   "time",
   "edit_date_time",
+  "is_paid",
+  "section_break_10",
+  "source_inventory",
   "products_section",
   "product_list",
-  "section_break_10",
+  "section_break_14",
   "net_quantity",
   "column_break_11",
   "net_total",
@@ -93,7 +97,8 @@
    "fieldname": "product_list",
    "fieldtype": "Table",
    "label": "Product List",
-   "options": "Sales Invoice Items"
+   "options": "Invoice Items",
+   "reqd": 1
   },
   {
    "default": "0",
@@ -102,14 +107,14 @@
    "label": "Edit Date Time"
   },
   {
-   "default": "0.0000",
+   "default": "0",
    "fieldname": "net_quantity",
    "fieldtype": "Float",
    "label": "Net Quantity",
    "read_only": 1
   },
   {
-   "default": "0.00",
+   "default": "0",
    "fieldname": "net_total",
    "fieldtype": "Currency",
    "label": "Net Total",
@@ -119,8 +124,10 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "reqd": 1
   },
   {
    "fieldname": "field",
@@ -136,14 +143,44 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "company.currency",
    "fieldname": "currency",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Currency",
-   "options": "Currency"
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_paid",
+   "fieldtype": "Check",
+   "label": "Paid"
+  },
+  {
+   "fetch_from": "company.default_inventory",
+   "fieldname": "source_inventory",
+   "fieldtype": "Link",
+   "label": "Source Inventory",
+   "options": "Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
   }
  ],
+ "is_submittable": 1,
  "links": [],
- "modified": "2020-02-25 13:49:05.664884",
+ "modified": "2020-02-27 15:26:17.234026",
  "modified_by": "Administrator",
  "module": "Customer",
  "name": "Sales Invoice",

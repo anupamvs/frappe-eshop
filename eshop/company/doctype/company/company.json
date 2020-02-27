@@ -7,7 +7,18 @@
  "engine": "InnoDB",
  "field_order": [
   "company_name",
-  "currency"
+  "currency",
+  "column_break_2",
+  "address",
+  "accounts_setting_section",
+  "default_sales",
+  "default_taxes",
+  "default_debtor",
+  "column_break_7",
+  "default_cash",
+  "default_bank",
+  "inventory_setting_section",
+  "default_inventory"
  ],
  "fields": [
   {
@@ -17,13 +28,78 @@
    "unique": 1
   },
   {
+   "default": "currency",
    "fieldname": "currency",
-   "fieldtype": "Currency",
-   "label": "Currency"
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accounts_setting_section",
+   "fieldtype": "Section Break",
+   "label": "Accounts Setting"
+  },
+  {
+   "fieldname": "default_sales",
+   "fieldtype": "Link",
+   "label": "Default Sales",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_taxes",
+   "fieldtype": "Link",
+   "label": "Default Taxes",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_debtor",
+   "fieldtype": "Link",
+   "label": "Default Debtor",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_cash",
+   "fieldtype": "Link",
+   "label": "Default Cash",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_bank",
+   "fieldtype": "Link",
+   "label": "Default Bank",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inventory_setting_section",
+   "fieldtype": "Section Break",
+   "label": "Inventory Setting"
+  },
+  {
+   "fieldname": "default_inventory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Default Inventory",
+   "options": "Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text Editor",
+   "label": "Address"
   }
  ],
  "links": [],
- "modified": "2020-02-25 16:31:36.734179",
+ "modified": "2020-02-27 13:36:15.644070",
  "modified_by": "Administrator",
  "module": "Company",
  "name": "Company",

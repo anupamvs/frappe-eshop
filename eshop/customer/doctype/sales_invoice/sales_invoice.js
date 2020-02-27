@@ -13,6 +13,9 @@ frappe.ui.form.on('Sales Invoice', {
 	},
 	edit_date_time: function(frm) {
 		frm.refresh()
+	},
+	company: function(frm) {
+		//alert(frm.doc.company)
 	}
 });
 
@@ -22,21 +25,8 @@ frappe.ui.form.on('Sales Invoice Items', {
 	},
 	product: function(frm, cdt, cdn) {
 		var product = frappe.model.get_doc(cdt,cdn);
-		
-		if(product.product){
-			frappe.call({
-				method: "eshop.product.doctype.product.product.get_product_sp",
-				args: {
-					'product': product.product
-				},
-				callback: function(res) {
-					frappe.model.set_value(cdt, cdn, "rate", res.message);
-					set_item_total(cdt, cdn);
-					set_total(frm);
-				}
-			});
-		}
-		else{
+		if(!(product.product)){
+			alert("cool");
 			frappe.model.set_value(cdt, cdn, "product", null);
 			frappe.model.set_value(cdt, cdn, "rate", null);
 			frappe.model.set_value(cdt, cdn, "total", null);

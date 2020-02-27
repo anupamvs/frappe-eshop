@@ -15,7 +15,9 @@
   "column_break_8",
   "to_location",
   "items_section",
-  "items"
+  "items",
+  "voucher_type",
+  "voucher_referece"
  ],
  "fields": [
   {
@@ -76,11 +78,25 @@
    "fieldname": "items",
    "fieldtype": "Table",
    "options": "Product Movement Items"
+  },
+  {
+   "fieldname": "voucher_type",
+   "fieldtype": "Link",
+   "label": "Voucher Type",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "voucher_referece",
+   "fieldtype": "Dynamic Link",
+   "label": "Voucher Referece",
+   "options": "voucher_type",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-02-18 16:01:41.517364",
+ "modified": "2020-02-27 13:49:54.609772",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Product Movement",

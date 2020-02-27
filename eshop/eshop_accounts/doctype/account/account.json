@@ -11,7 +11,8 @@
   "rgt",
   "is_group",
   "old_parent",
-  "parent_account"
+  "parent_account",
+  "company"
  ],
  "fields": [
   {
@@ -55,11 +56,17 @@
    "fieldtype": "Link",
    "label": "Parent Account",
    "options": "Account"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
   }
  ],
  "is_tree": 1,
  "links": [],
- "modified": "2020-02-24 14:58:07.224308",
+ "modified": "2020-02-25 18:53:24.436010",
  "modified_by": "Administrator",
  "module": "Eshop Accounts",
  "name": "Account",
