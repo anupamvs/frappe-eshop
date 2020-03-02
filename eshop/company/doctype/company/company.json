@@ -14,9 +14,11 @@
   "default_sales",
   "default_taxes",
   "default_debtor",
+  "default_purchase",
   "column_break_7",
   "default_cash",
   "default_bank",
+  "default_creditor",
   "inventory_setting_section",
   "default_inventory"
  ],
@@ -44,31 +46,31 @@
   {
    "fieldname": "default_sales",
    "fieldtype": "Link",
-   "label": "Default Sales",
+   "label": "Default Sales Account",
    "options": "Account"
   },
   {
    "fieldname": "default_taxes",
    "fieldtype": "Link",
-   "label": "Default Taxes",
+   "label": "Default Taxes Account",
    "options": "Account"
   },
   {
    "fieldname": "default_debtor",
    "fieldtype": "Link",
-   "label": "Default Debtor",
+   "label": "Default Debtor Account",
    "options": "Account"
   },
   {
    "fieldname": "default_cash",
    "fieldtype": "Link",
-   "label": "Default Cash",
+   "label": "Default Cash Account",
    "options": "Account"
   },
   {
    "fieldname": "default_bank",
    "fieldtype": "Link",
-   "label": "Default Bank",
+   "label": "Default Bank Account",
    "options": "Account"
   },
   {
@@ -96,10 +98,24 @@
    "fieldname": "address",
    "fieldtype": "Text Editor",
    "label": "Address"
+  },
+  {
+   "fieldname": "default_creditor",
+   "fieldtype": "Link",
+   "label": "Default Creditor Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "default_purchase",
+   "fieldtype": "Link",
+   "label": "Default Purchase Account",
+   "options": "Account",
+   "reqd": 1
   }
  ],
  "links": [],
- "modified": "2020-02-27 13:36:15.644070",
+ "modified": "2020-03-02 11:27:16.989185",
  "modified_by": "Administrator",
  "module": "Company",
  "name": "Company",

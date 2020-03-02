@@ -19,22 +19,22 @@ frappe.ui.form.on('Sales Invoice', {
 	}
 });
 
-frappe.ui.form.on('Sales Invoice Items', {
-	refresh: function(frm) {
-		console.log(frm.doc)
-	},
+frappe.ui.form.on('Invoice Items', {
 	product: function(frm, cdt, cdn) {
 		var product = frappe.model.get_doc(cdt,cdn);
 		if(!(product.product)){
-			alert("cool");
 			frappe.model.set_value(cdt, cdn, "product", null);
 			frappe.model.set_value(cdt, cdn, "rate", null);
 			frappe.model.set_value(cdt, cdn, "total", null);
+		}
+		else{
+			check_product_quantity_at_location(frm,cdt,cdn);
 		}
 	},
 	quantity: function(frm, cdt, cdn) {
 		set_item_total(cdt, cdn);
 		set_total(frm);
+		check_product_quantity_at_location(frm,cdt,cdn);
 	},
 	rate: function(frm, cdt, cdn){
 		set_item_total(cdt, cdn);
@@ -62,4 +62,32 @@ var set_total = function(frm){
 	});
 	frappe.model.set_value(frm.doc.doctype, frm.doc.name, "net_quantity", quantity);
 	frappe.model.set_value(frm.doc.doctype, frm.doc.name, "net_total", total_amt);
+}
+
+var check_product_quantity_at_location = function(frm,cdt,cdn){
+	frappe.call({
+		method: "eshop.inventory.doctype.basket.basket.get_basket_quantity",
+		args: {
+			company: frm.doc.company,
+			product: frappe.model.get_value(cdt, cdn, "product"),
+			location: frm.doc.source_inventory
+		},
+		callback: function(r) {
+			if(r.message) {
+				let quantity = frappe.model.get_value(cdt, cdn, "quantity");
+				let product = frappe.model.get_value(cdt, cdn, "product");
+				if(r.message.quantity < quantity){
+					frappe.throw({
+						message: frm.doc.source_inventory + " doesn't have " + quantity + " of " + product,
+						title: "Insufficient Quantity"
+					});
+					alert(frm.doc.source_inventory + " doesn't have " + quantity + " of " + product);
+					frappe.model.set_value(cdt, cdn, "product", null);
+					frappe.model.set_value(cdt, cdn, "rate", null);
+					frappe.model.set_value(cdt, cdn, "quantity", 1);
+					frappe.model.set_value(cdt, cdn, "total", null);
+				}
+			}
+		}
+	});
 }

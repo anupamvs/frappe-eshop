@@ -4,6 +4,11 @@
 
 frappe.query_reports["General Ledger"] = {
 	"filters": [
-
+		// {
+        //     fieldname: 'account',
+        //     label: 'Account',
+        //     fieldtype: 'Link',
+        //     options: 'Account'
+        // }
 	]
 };

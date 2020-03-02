@@ -23,6 +23,10 @@ def get_data():
 					"type": "doctype",
 					"name": "Purchase Invoice"
 				},
+				{
+					"type": "doctype",
+					"name": "Supplier"
+				},
 			]
 		},
 		{
@@ -61,6 +65,13 @@ def get_data():
 					"doctype":"Basket",
 					"onboard": 1,
 					"name": "Product Balance",
+				},
+				{
+					"type": "report",
+					"is_query_report": True,
+					"doctype":"Product Movement",
+					"onboard": 1,
+					"name": "Stock Ledger",
 				}
 			]
 		},
@@ -78,13 +89,23 @@ def get_data():
 					"label": _("Account Tree"),
 					"link": "Tree/Account",
 					"onboard": 1,
+				},
+				{
+					"type": "report",
+					"is_query_report": True,
+					"doctype":"GL Entry",
+					"onboard": 1,
+					"name": "General Ledger",
 				}
 			]
 		},
 		{
 			"label": _("Company"),
 			"items": [
-				
+				{
+					"type": "doctype",
+					"name": "Company"
+				}
 			]
 		}
 	]

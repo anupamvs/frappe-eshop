@@ -6,6 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "company",
   "date",
   "column_break_3",
   "time",
@@ -92,11 +93,18 @@
    "label": "Voucher Referece",
    "options": "voucher_type",
    "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-02-27 13:49:54.609772",
+ "modified": "2020-03-02 14:05:44.098902",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Product Movement",

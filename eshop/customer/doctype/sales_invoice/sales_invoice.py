@@ -9,8 +9,8 @@ from frappe.model.document import Document
 class SalesInvoice(Document):
 	
 	def on_submit(self):
-		#print(vars(self))
 		self.make_gl_entries()
+		self.make_product_movement()
 
 	def make_gl_entries(self):
 		gl_entries = []
@@ -18,7 +18,7 @@ class SalesInvoice(Document):
 		self.make_sales_gl_entry(gl_entries)
 		if self.is_paid :
 			self.make_bank_gl_entry(gl_entries)
-		#print(gl_entries)
+	
 		for gl_entry in gl_entries:
 			gl_entry.update({"doctype": "GL Entry"})
 			gl = frappe.get_doc(gl_entry)
@@ -34,7 +34,6 @@ class SalesInvoice(Document):
 			'party_type' : 'Customer',
 			'party' : self.customer
 		}))
-		#print(gl_entries)
 	
 	def make_sales_gl_entry(self, gl_entries):
 		company = frappe.get_doc('Company', self.company)
@@ -64,3 +63,24 @@ class SalesInvoice(Document):
 			'date' : self.date
 		})
 		return gl_entry_dic.update(gl_entry)
+
+	def make_product_movement(self):
+		items = []
+		for item in self.product_list:
+			items.append({
+				"product": item.product,
+				"quantity": item.quantity
+			})
+		movement = frappe._dict({
+			'doctype' : 'Product Movement',
+			'company' : self.company,
+			'date' : self.date,
+			'time' : self.time,
+			'from_location': self.source_inventory,
+			'voucher_type' : self.doctype,
+			'voucher_referece' : self.name,
+			'docstatus' : 1,
+			'items': items
+		})
+		movement = frappe.get_doc(movement)
+		movement.insert()

@@ -15,13 +15,14 @@ def basket_exist(product, location):
 		return True
 	return False
 
-def get_basket(product, location, create=False):
+def get_basket(company, product, location,create=False):
 	if basket_exist(product, location):
-		basket = frappe.db.get_value("Basket", {"product": product, "location": location})
+		basket = frappe.db.get_value("Basket", {"company": company,"product": product, "location": location})
 		basket_doc = frappe.get_doc("Basket", basket)
 		return basket_doc
 	else:
 		basket = frappe.new_doc("Basket")
+		basket.company = company
 		basket.product = product
 		basket.location = location
 		basket.quantity = 0.00
@@ -30,3 +31,9 @@ def get_basket(product, location, create=False):
 
 def check_basket_quantity(basket):
 	pass
+
+@frappe.whitelist()
+def get_basket_quantity(company= None, product=None, location=None, as_dict=True):
+	if company and product and location:
+		basket = get_basket(company, product, location)
+		return basket

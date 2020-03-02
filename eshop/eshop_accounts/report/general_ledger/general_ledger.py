@@ -12,54 +12,54 @@ def execute(filters=None):
 	)
 	columns = [
 		{
-			"label": _("Date"),
+			"label": "Date",
 			"fieldname": "date",
 			"fieldtype": "Date",
 			"width": 90
 		},
 		{
-			"label": _("Account"),
+			"label": "Account",
 			"fieldname": "account",
 			"fieldtype": "Link",
 			"options": "Account",
 			"width": 180
 		},
 		{
-			"label": _("Debit"),
+			"label": "Debit",
 			"fieldname": "debit_amt",
 			"fieldtype": "Float",
 			"width": 100
 		},
 		{
-			"label": _("Credit"),
+			"label": "Credit",
 			"fieldname": "credit_amt",
 			"fieldtype": "Float",
 			"width": 100
 		},
 		{
-			"label": _("Voucher Type"),
+			"label": "Voucher Type",
 			"fieldname": "voucher_type",
 			"width": 120
 		},
 		{
-			"label": _("Voucher Ref"),
+			"label": "Voucher Ref",
 			"fieldname": "voucher_referance",
 			"fieldtype": "Dynamic Link",
 			"options": "voucher_type",
 			"width": 180
 		},
 		{
-			"label": _("Against Account"),
+			"label": "Against Account",
 			"fieldname": "against",
 			"width": 120
 		},
 		{
-			"label": _("Party Type"),
+			"label": "Party Type",
 			"fieldname": "party_type",
 			"width": 100
 		},
 		{
-			"label": _("Party"),
+			"label": "Party",
 			"fieldname": "party",
 			"fieldtype": "Dynamic Link",
 			"options": "party_type",

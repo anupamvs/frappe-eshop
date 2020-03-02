@@ -163,7 +163,8 @@
    "default": "1",
    "fieldname": "is_paid",
    "fieldtype": "Check",
-   "label": "Paid"
+   "label": "Paid",
+   "read_only": 1
   },
   {
    "fetch_from": "company.default_inventory",
@@ -180,7 +181,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-02-27 15:26:17.234026",
+ "modified": "2020-02-28 17:39:25.370782",
  "modified_by": "Administrator",
  "module": "Customer",
  "name": "Sales Invoice",

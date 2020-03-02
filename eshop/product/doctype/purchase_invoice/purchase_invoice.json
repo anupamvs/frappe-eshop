@@ -6,8 +6,8 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "company_name",
-  "supplier_name",
+  "company",
+  "supplier",
   "currency",
   "amended_from",
   "column_break_5",
@@ -33,20 +33,6 @@
    "options": "Purchase Invoice",
    "print_hide": 1,
    "read_only": 1
-  },
-  {
-   "fieldname": "supplier_name",
-   "fieldtype": "Data",
-   "label": "Supplier Name",
-   "reqd": 1
-  },
-  {
-   "fieldname": "company_name",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Company Name",
-   "options": "Company",
-   "reqd": 1
   },
   {
    "fetch_from": "company.currency",
@@ -84,7 +70,8 @@
    "default": "1",
    "fieldname": "is_paid",
    "fieldtype": "Check",
-   "label": "Paid"
+   "label": "Paid",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_10",
@@ -114,23 +101,42 @@
    "fieldtype": "Section Break"
   },
   {
+   "default": "0",
    "fieldname": "net_quantity",
    "fieldtype": "Float",
-   "label": "Net Quantity"
+   "label": "Net Quantity",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_16",
    "fieldtype": "Column Break"
   },
   {
+   "default": "0",
    "fieldname": "net_total",
    "fieldtype": "Currency",
-   "label": "Net Total"
+   "label": "Net Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company Name",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier",
+   "reqd": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-02-27 15:50:24.822614",
+ "modified": "2020-03-02 11:02:56.058977",
  "modified_by": "Administrator",
  "module": "Product",
  "name": "Purchase Invoice",

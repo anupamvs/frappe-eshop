@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "creation": "2020-03-02 12:20:03.480806",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "date",
+  "time",
+  "product",
+  "inventory",
+  "voucher_type",
+  "voucher_reference",
+  "quantity",
+  "balance"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "date"
+  },
+  {
+   "default": "Now",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "time"
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Product",
+   "options": "Product"
+  },
+  {
+   "fieldname": "inventory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Inventory",
+   "options": "Location"
+  },
+  {
+   "fieldname": "voucher_type",
+   "fieldtype": "Link",
+   "label": "Voucher Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "voucher_reference",
+   "fieldtype": "Dynamic Link",
+   "label": "Voucher Reference",
+   "options": "voucher_type"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Float",
+   "label": "Balance"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  }
+ ],
+ "in_create": 1,
+ "links": [],
+ "modified": "2020-03-02 14:36:16.238308",
+ "modified_by": "Administrator",
+ "module": "Inventory",
+ "name": "SL Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
