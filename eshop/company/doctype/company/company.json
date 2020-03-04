@@ -20,7 +20,9 @@
   "default_bank",
   "default_creditor",
   "inventory_setting_section",
-  "default_inventory"
+  "default_inventory",
+  "taxes_and_charges_section",
+  "default_tax_template"
  ],
  "fields": [
   {
@@ -47,31 +49,36 @@
    "fieldname": "default_sales",
    "fieldtype": "Link",
    "label": "Default Sales Account",
-   "options": "Account"
+   "options": "Account",
+   "reqd": 1
   },
   {
    "fieldname": "default_taxes",
    "fieldtype": "Link",
    "label": "Default Taxes Account",
-   "options": "Account"
+   "options": "Account",
+   "reqd": 1
   },
   {
    "fieldname": "default_debtor",
    "fieldtype": "Link",
    "label": "Default Debtor Account",
-   "options": "Account"
+   "options": "Account",
+   "reqd": 1
   },
   {
    "fieldname": "default_cash",
    "fieldtype": "Link",
    "label": "Default Cash Account",
-   "options": "Account"
+   "options": "Account",
+   "reqd": 1
   },
   {
    "fieldname": "default_bank",
    "fieldtype": "Link",
    "label": "Default Bank Account",
-   "options": "Account"
+   "options": "Account",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_7",
@@ -112,10 +119,22 @@
    "label": "Default Purchase Account",
    "options": "Account",
    "reqd": 1
+  },
+  {
+   "fieldname": "taxes_and_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Taxes And Charges"
+  },
+  {
+   "fieldname": "default_tax_template",
+   "fieldtype": "Link",
+   "label": "Default Tax Template",
+   "options": "Taxes",
+   "reqd": 1
   }
  ],
  "links": [],
- "modified": "2020-03-02 11:27:16.989185",
+ "modified": "2020-03-04 10:55:59.137911",
  "modified_by": "Administrator",
  "module": "Company",
  "name": "Company",

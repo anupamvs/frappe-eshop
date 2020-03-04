@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "autoname": "format:{location}-{product}-{######}",
  "creation": "2020-02-18 15:12:41.019106",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -44,7 +45,7 @@
  ],
  "in_create": 1,
  "links": [],
- "modified": "2020-03-02 15:51:12.374124",
+ "modified": "2020-03-04 14:33:56.417840",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Basket",

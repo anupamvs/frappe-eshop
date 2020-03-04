@@ -9,6 +9,7 @@
   "basic_information_section",
   "product_name",
   "category",
+  "company",
   "image",
   "column_break_4",
   "cost_price",
@@ -94,10 +95,17 @@
    "fieldname": "basic_information_section",
    "fieldtype": "Section Break",
    "label": "Basic Information"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
   }
  ],
  "links": [],
- "modified": "2020-02-17 18:24:06.888033",
+ "modified": "2020-03-04 13:10:15.199398",
  "modified_by": "Administrator",
  "module": "Product",
  "name": "Product",

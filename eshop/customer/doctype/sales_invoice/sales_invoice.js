@@ -16,6 +16,22 @@ frappe.ui.form.on('Sales Invoice', {
 	},
 	company: function(frm) {
 		//alert(frm.doc.company)
+	},
+	tax_template: function(frm) {
+		frappe.call({
+			method: "eshop.eshop_accounts.doctype.taxes.taxes.get_tax_list",
+			args: {
+				template: frm.doc.tax_template,
+			},
+			callback: function(r) {
+				if(r.message) {
+					frm.doc.taxes_list = r.message
+					frm.refresh()				}
+			}
+		});
+	},
+	net_total: function(frm) {
+		calculate_taxes(frm)
 	}
 });
 
@@ -90,4 +106,8 @@ var check_product_quantity_at_location = function(frm,cdt,cdn){
 			}
 		}
 	});
+}
+
+var calculate_taxes = function(frm) {
+	console.log(frm);
 }
