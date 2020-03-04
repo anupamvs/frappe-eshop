@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "autoname": "field:title",
+ "creation": "2020-03-04 10:44:00.944288",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "rate",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "unique": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2020-03-04 16:15:46.537605",
+ "modified_by": "Administrator",
+ "module": "Eshop Accounts",
+ "name": "Tax List",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
