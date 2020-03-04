@@ -102,7 +102,7 @@
    "fieldname": "product_list",
    "fieldtype": "Table",
    "label": "Product List",
-   "options": "Invoice Items",
+   "options": "Invoice Item",
    "reqd": 1
   },
   {
@@ -180,14 +180,14 @@
    "fieldname": "tax_template",
    "fieldtype": "Link",
    "label": "Tax Template",
-   "options": "Taxes",
+   "options": "Tax Template",
    "reqd": 1
   },
   {
    "fieldname": "taxes_list",
    "fieldtype": "Table",
    "label": "Taxes And Charges",
-   "options": "Taxes List",
+   "options": "Tax List",
    "read_only": 1
   },
   {
@@ -221,7 +221,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-03-04 12:00:27.283056",
+ "modified": "2020-03-04 16:08:00.820409",
  "modified_by": "Administrator",
  "module": "Customer",
  "name": "Sales Invoice",

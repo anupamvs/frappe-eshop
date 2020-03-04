@@ -78,7 +78,7 @@
   {
    "fieldname": "items",
    "fieldtype": "Table",
-   "options": "Product Movement Items"
+   "options": "Product Movement Item"
   },
   {
    "fieldname": "voucher_type",
@@ -104,7 +104,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-03-02 14:05:44.098902",
+ "modified": "2020-03-04 15:11:39.648225",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Product Movement",

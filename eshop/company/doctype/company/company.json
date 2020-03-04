@@ -129,12 +129,12 @@
    "fieldname": "default_tax_template",
    "fieldtype": "Link",
    "label": "Default Tax Template",
-   "options": "Taxes",
+   "options": "Tax Template",
    "reqd": 1
   }
  ],
  "links": [],
- "modified": "2020-03-04 10:55:59.137911",
+ "modified": "2020-03-04 16:07:05.928624",
  "modified_by": "Administrator",
  "module": "Company",
  "name": "Company",

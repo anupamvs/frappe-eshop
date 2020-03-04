@@ -28,7 +28,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Product Movement Items",
+   "options": "Product Movement Item",
    "print_hide": 1,
    "read_only": 1
   }
@@ -36,10 +36,10 @@
  "is_submittable": 1,
  "istable": 1,
  "links": [],
- "modified": "2020-03-02 13:46:51.503034",
+ "modified": "2020-03-04 15:11:39.162672",
  "modified_by": "Administrator",
  "module": "Inventory",
- "name": "Product Movement Items",
+ "name": "Product Movement Item",
  "owner": "Administrator",
  "permissions": [],
  "quick_entry": 1,

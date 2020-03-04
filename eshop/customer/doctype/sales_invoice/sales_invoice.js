@@ -19,7 +19,7 @@ frappe.ui.form.on('Sales Invoice', {
 	},
 	tax_template: function(frm) {
 		frappe.call({
-			method: "eshop.eshop_accounts.doctype.taxes.taxes.get_tax_list",
+			method: "eshop.eshop_accounts.doctype.tax_template.tax_template.get_tax_list",
 			args: {
 				template: frm.doc.tax_template,
 			},
@@ -35,7 +35,7 @@ frappe.ui.form.on('Sales Invoice', {
 	}
 });
 
-frappe.ui.form.on('Invoice Items', {
+frappe.ui.form.on('Invoice Item', {
 	product: function(frm, cdt, cdn) {
 		var product = frappe.model.get_doc(cdt,cdn);
 		if(!(product.product)){
@@ -109,5 +109,5 @@ var check_product_quantity_at_location = function(frm,cdt,cdn){
 }
 
 var calculate_taxes = function(frm) {
-	console.log(frm);
+	console.log("frm");
 }

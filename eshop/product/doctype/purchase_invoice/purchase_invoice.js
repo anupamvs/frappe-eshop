@@ -16,7 +16,7 @@ frappe.ui.form.on('Purchase Invoice', {
 	},
 });
 
-frappe.ui.form.on('Invoice Items', {
+frappe.ui.form.on('Invoice Item', {
 	product: function(frm, cdt, cdn) {
 		var product = frappe.model.get_doc(cdt,cdn);
 		if(!(product.product)){

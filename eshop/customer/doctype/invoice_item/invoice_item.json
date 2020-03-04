@@ -1,5 +1,6 @@
 {
  "engine": "InnoDB", 
+ "module": "Customer", 
  "field_order": [
   "product", 
   "quantity", 
@@ -8,15 +9,15 @@
  ], 
  "istable": 1, 
  "modified_by": "Administrator", 
- "name": "Invoice Items", 
+ "name": "Invoice Item", 
  "links": [], 
  "fields": [
   {
    "label": "Product", 
-   "in_list_view": 1, 
+   "fieldname": "product", 
    "fieldtype": "Link", 
    "reqd": 1, 
-   "fieldname": "product", 
+   "in_list_view": 1, 
    "options": "Product"
   }, 
   {
@@ -28,34 +29,33 @@
    "fieldname": "quantity"
   }, 
   {
-   "fetch_from": "product.selling_price", 
    "precision": "2", 
    "label": "Rate", 
+   "options": "currency", 
    "in_list_view": 1, 
    "fieldtype": "Currency", 
    "reqd": 1, 
    "fieldname": "rate", 
-   "options": "currency"
+   "fetch_from": "product.selling_price"
   }, 
   {
    "read_only": 1, 
    "label": "Total", 
-   "in_list_view": 1, 
-   "fieldtype": "Currency", 
    "fieldname": "total", 
+   "fieldtype": "Currency", 
+   "in_list_view": 1, 
    "options": "currency"
   }
  ], 
- "track_changes": 1, 
  "creation": "2020-02-21 11:40:10.938458", 
  "doctype": "DocType", 
- "actions": [], 
+ "track_changes": 1, 
  "modified": "2020-02-26 11:33:33.87777", 
  "sort_order": "DESC", 
- "module": "Customer", 
+ "actions": [], 
  "owner": "Administrator", 
- "sort_field": "modified", 
  "editable_grid": 1, 
- "quick_entry": 1, 
- "permissions": []
+ "sort_field": "modified", 
+ "permissions": [], 
+ "quick_entry": 1
 }
