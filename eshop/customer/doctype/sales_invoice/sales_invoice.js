@@ -14,9 +14,6 @@ frappe.ui.form.on('Sales Invoice', {
 	edit_date_time: function(frm) {
 		frm.refresh()
 	},
-	company: function(frm) {
-		//alert(frm.doc.company)
-	},
 	tax_template: function(frm) {
 		frappe.call({
 			method: "eshop.eshop_accounts.doctype.tax_template.tax_template.get_tax_list",
@@ -25,13 +22,22 @@ frappe.ui.form.on('Sales Invoice', {
 			},
 			callback: function(r) {
 				if(r.message) {
-					frm.doc.taxes_list = r.message
-					frm.refresh()				}
+					frm.doc.tax_list=[];
+					r.message.forEach(function(child){
+						if(child.title){
+							let childTable = frm.add_child("tax_list");
+							childTable.title=child.title;
+							childTable.rate=child.rate;
+						}
+					});
+					cur_frm.refresh_fields("tax_list");
+				}
 			}
 		});
 	},
 	net_total: function(frm) {
-		calculate_taxes(frm)
+		calculate_taxes(frm);
+		calculate_grand_total(frm);
 	}
 });
 
@@ -109,5 +115,16 @@ var check_product_quantity_at_location = function(frm,cdt,cdn){
 }
 
 var calculate_taxes = function(frm) {
-	console.log("frm");
+	let total_tax = 0;
+	frm.doc.tax_list.forEach(function (child){
+		let tax = (frm.doc.net_total*frappe.model.get_value(child.doctype, child.name, "rate"))/100;
+		frappe.model.set_value(child.doctype, child.name, "total", tax);
+		total_tax += tax;
+	});
+	frappe.model.set_value(frm.doc.doctype, frm.doc.name, "total_taxes_and_charges", total_tax);
+}
+
+var calculate_grand_total = function(frm) {
+	let grand_total = frappe.model.get_value(frm.doc.doctype, frm.doc.name, "total_taxes_and_charges") + frappe.model.get_value(frm.doc.doctype, frm.doc.name, "net_total");
+	frappe.model.set_value(frm.doc.doctype, frm.doc.name, "grand_total", grand_total);
 }

@@ -12,10 +12,12 @@ class TaxTemplate(Document):
 @frappe.whitelist()
 def get_tax_list(template):
 	if template:
-		template = frappe.db.get_list('Tax List',
+		template = frappe.db.get_all('Tax List',
 			filters = {
 				'parent' : template
-			},
-			fields=['title','rate'])
+			}, fields= ['*'])
+		# print(template)
+		# for i in range(len(template)):
+		# 	template[i].doctype = "Tax List"
 		return template
 

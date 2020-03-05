@@ -22,9 +22,9 @@
   "products_section",
   "product_list",
   "section_break_16",
-  "taxes_list",
-  "column_break_22",
+  "tax_list",
   "net_quantity",
+  "column_break_22",
   "net_total",
   "total_taxes_and_charges",
   "grand_total",
@@ -177,18 +177,12 @@
   },
   {
    "fetch_from": "company.default_tax_template",
+   "fetch_if_empty": 1,
    "fieldname": "tax_template",
    "fieldtype": "Link",
    "label": "Tax Template",
    "options": "Tax Template",
    "reqd": 1
-  },
-  {
-   "fieldname": "taxes_list",
-   "fieldtype": "Table",
-   "label": "Taxes And Charges",
-   "options": "Tax List",
-   "read_only": 1
   },
   {
    "fieldname": "column_break_12",
@@ -217,11 +211,17 @@
    "label": "Grand Total",
    "options": "currency",
    "read_only": 1
+  },
+  {
+   "fieldname": "tax_list",
+   "fieldtype": "Table",
+   "label": "Taxes And Charges",
+   "options": "Tax List"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-03-04 16:08:00.820409",
+ "modified": "2020-03-05 10:30:09.240015",
  "modified_by": "Administrator",
  "module": "Customer",
  "name": "Sales Invoice",

@@ -15,6 +15,7 @@ class SalesInvoice(Document):
 	def make_gl_entries(self):
 		gl_entries = []
 		self.make_customer_gl_entry(gl_entries)
+		self.make_taxes_gl_entry(gl_entries)
 		self.make_sales_gl_entry(gl_entries)
 		if self.is_paid :
 			self.make_bank_gl_entry(gl_entries)
@@ -26,15 +27,22 @@ class SalesInvoice(Document):
 	
 	def make_customer_gl_entry(self, gl_entries):
 		company = frappe.get_doc('Company', self.company)
-		credit_amt = self.net_total if self.is_paid else 0
+		credit_amt = self.grand_total if self.is_paid else 0
 		gl_entries.append(self.gl_meta({
 			'account': company.default_debtor,
-			'debit_amt' : self.net_total,
+			'debit_amt' : self.grand_total,
 			'credit_amt' :credit_amt,
 			'party_type' : 'Customer',
 			'party' : self.customer
 		}))
 	
+	def make_taxes_gl_entry(self, gl_entries):
+		company = frappe.get_doc('Company', self.company)
+		gl_entries.append(self.gl_meta({
+			'account': company.default_taxes,
+			'credit_amt': self.total_taxes_and_charges
+		}))
+
 	def make_sales_gl_entry(self, gl_entries):
 		company = frappe.get_doc('Company', self.company)
 		gl_entries.append(self.gl_meta({
@@ -46,7 +54,7 @@ class SalesInvoice(Document):
 		company = frappe.get_doc('Company', self.company)
 		gl_entries.append(self.gl_meta({
 			'account': company.default_bank,
-			'debit_amt' : self.net_total
+			'debit_amt' : self.grand_total
 		}))
 
 	def gl_meta(self, gl_entry):
