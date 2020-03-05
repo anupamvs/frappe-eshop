@@ -6,5 +6,5 @@ from __future__ import unicode_literals
 # import frappe
 import unittest
 
-class TestTax Template(unittest.TestCase):
+class TestTaxTemplate(unittest.TestCase):
 	pass
