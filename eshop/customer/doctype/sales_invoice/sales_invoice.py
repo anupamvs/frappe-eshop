@@ -72,7 +72,8 @@ class SalesInvoice(Document):
 			'against' : None,
 			'party_type' : None,
 			'party' : None,
-			'date' : self.date
+			'date' : self.date,
+			'time' :self.time
 		})
 		return gl_entry_dic.update(gl_entry)
 

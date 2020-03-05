@@ -6,8 +6,8 @@ import frappe
 from frappe import _
 def execute(filters=None):
 	data = frappe.db.get_list('GL Entry',
-	fields=['date', 'account', 'debit_amt', 'credit_amt', 'voucher_type', 'voucher_referance', 'against', 'party_type', 'party'],
-    order_by='date desc',
+	fields=['date', 'time', 'account', 'debit_amt', 'credit_amt', 'voucher_type', 'voucher_referance', 'against', 'party_type', 'party'],
+    order_by='date,time desc',
     as_list=True
 	)
 	columns = [
@@ -15,6 +15,12 @@ def execute(filters=None):
 			"label": "Date",
 			"fieldname": "date",
 			"fieldtype": "Date",
+			"width": 90
+		},
+		{
+			"label": "Time",
+			"fieldname": "time",
+			"fieldtype": "Time",
 			"width": 90
 		},
 		{

@@ -24,11 +24,9 @@ frappe.ui.form.on('Sales Invoice', {
 				if(r.message) {
 					frm.doc.tax_list=[];
 					r.message.forEach(function(child){
-						if(child.title){
-							let childTable = frm.add_child("tax_list");
-							childTable.title=child.title;
-							childTable.rate=child.rate;
-						}
+						let childTable = frm.add_child("tax_list");
+						childTable.title=child.title;
+						childTable.rate=child.rate;
 					});
 					cur_frm.refresh_fields("tax_list");
 				}

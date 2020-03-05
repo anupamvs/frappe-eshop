@@ -10,6 +10,6 @@ class Product(Document):
 	pass
 
 @frappe.whitelist()
-def get_product_sp(product):
-	price = frappe.db.get_value('Product',product,'selling_price')
+def get_product_cp(product):
+	price = frappe.db.get_value('Product',product,'cost_price')
 	return price
