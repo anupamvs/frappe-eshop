@@ -30,6 +30,7 @@ class SalesInvoice(Document):
 		credit_amt = self.grand_total if self.is_paid else 0
 		gl_entries.append(self.gl_meta({
 			'account': company.default_debtor,
+			'against': company.default_sales,
 			'debit_amt' : self.grand_total,
 			'credit_amt' :credit_amt,
 			'party_type' : 'Customer',
@@ -40,21 +41,24 @@ class SalesInvoice(Document):
 		company = frappe.get_doc('Company', self.company)
 		gl_entries.append(self.gl_meta({
 			'account': company.default_taxes,
-			'credit_amt': self.total_taxes_and_charges
+			'credit_amt': self.total_taxes_and_charges,
+			'against' : self.customer,
 		}))
 
 	def make_sales_gl_entry(self, gl_entries):
 		company = frappe.get_doc('Company', self.company)
 		gl_entries.append(self.gl_meta({
 			'account': company.default_sales,
-			'credit_amt' : self.net_total
+			'credit_amt' : self.net_total,
+			'against' : self.customer,
 		}))
 
 	def make_bank_gl_entry(self, gl_entries):
 		company = frappe.get_doc('Company', self.company)
 		gl_entries.append(self.gl_meta({
 			'account': company.default_bank,
-			'debit_amt' : self.grand_total
+			'debit_amt' : self.grand_total,
+			'against' : self.customer,
 		}))
 
 	def gl_meta(self, gl_entry):
